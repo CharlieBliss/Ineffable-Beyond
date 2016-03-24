@@ -1,0 +1,13 @@
+<h1 id="main-page-title"> Life is short and miserable, Reach for <br>THE INEFFABLE BEYOND </h1>
+
+<ul>
+<p>Worlds beyond yours:</p>
+<% @worlds.each do |world| %>
+<li> <%= link_to "#{world.name}", world %>
+<% end %>
+</ul>
+
+
+<%= link_to "Create a New World to Play in", new_world_path, id: "new-world-link"  %>
+
+

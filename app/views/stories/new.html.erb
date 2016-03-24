@@ -1,0 +1,9 @@
+<h1> Create a new Story </h1>
+
+<%= form_for [@world, @story] do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.check_box :private %>
+<%= submit_tag "Start Writing" %>
+<% end %>
+

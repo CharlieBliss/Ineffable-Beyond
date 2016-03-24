@@ -16,14 +16,6 @@ ActiveRecord::Schema.define(version: 20160324150803) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "article_tags", id: false, force: :cascade do |t|
-    t.integer "article_id"
-    t.integer "tag_id"
-  end
-
-  add_index "article_tags", ["article_id"], name: "index_article_tags_on_article_id", using: :btree
-  add_index "article_tags", ["tag_id"], name: "index_article_tags_on_tag_id", using: :btree
-
   create_table "articles", force: :cascade do |t|
     t.string   "title",      limit: 50,                 null: false
     t.text     "content"
@@ -38,6 +30,14 @@ ActiveRecord::Schema.define(version: 20160324150803) do
   add_index "articles", ["author_id"], name: "index_articles_on_author_id", using: :btree
   add_index "articles", ["story_id"], name: "index_articles_on_story_id", using: :btree
   add_index "articles", ["world_id"], name: "index_articles_on_world_id", using: :btree
+
+  create_table "articles_tags", id: false, force: :cascade do |t|
+    t.integer "article_id"
+    t.integer "tag_id"
+  end
+
+  add_index "articles_tags", ["article_id"], name: "index_articles_tags_on_article_id", using: :btree
+  add_index "articles_tags", ["tag_id"], name: "index_articles_tags_on_tag_id", using: :btree
 
   create_table "stories", force: :cascade do |t|
     t.string   "name",       limit: 50

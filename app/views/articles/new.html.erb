@@ -1,0 +1,16 @@
+<h1> Create a new Note or Chapter </h1>
+
+<%= form_for [@world, @article] do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :content %>
+<%= f.text_field :content %>
+<%= f.label :private? %>
+<%= f.check_box :private %>
+<%= f.label :related_story %>
+<%= f.text_field :story_id %>
+
+
+<%= submit_tag "Start Writing!" %>
+<% end %>
+

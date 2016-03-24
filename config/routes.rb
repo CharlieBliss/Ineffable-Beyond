@@ -17,12 +17,23 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-    resources :users{ except: :index}
+    resources :users, { except: :index}
 
     resources :worlds do
-      resources :stories
-      resources :articles
+      resources :stories, {only: [:index, :new, :create]}
+      resources :articles, {only: [:index, :new, :create]}
     end
+    resources :stories, {only: [:show, :edit, :update, :destroy]}
+    resources :articles, {only: [:show, :edit, :update, :destroy]}
+
+    resources :tags, {only: [:create, :show, :index]}
+
+    resources :sessions, only: [:new, :create, :destroy]
+
+
+
+
+
 
   # Example resource route with options:
   #   resources :products do
