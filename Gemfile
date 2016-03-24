@@ -42,6 +42,6 @@ group :development, :test do
 
   gem 'faker'
 
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
 
