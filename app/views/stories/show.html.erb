@@ -1,0 +1,27 @@
+<h1><%= @story.name %> </h1>
+
+<% if @short_story %>
+<article> <%=@short_story.content %></article>
+<% end %>
+
+<ul>
+  <% if @chapters.any? %>
+  <% @chapters.each do |chapter|%>
+  <li> <%= link_to "#{story.name}", story  %> </li>
+<% end %>
+<%end %>
+
+</ul>
+
+<ul>
+  <h4> Worldbuilding </h4>
+
+<% if @articles.any? %>
+  <% @articles.each do |article|%>
+  <li> <%= link_to "#{article.title}", article  %> </li>
+<% end %>
+<%end %>
+
+
+
+

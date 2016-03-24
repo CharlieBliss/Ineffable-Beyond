@@ -1,0 +1,33 @@
+<h1>Welcome to <%= @world.name %> ! </h1>
+
+<article> <%=@world.description %></article>
+
+<ul>
+  <% if @stories.any? %>
+  <% @stories.each do |story|%>
+  <li> <%= link_to "#{story.name}", story  %> </li>
+<% end %>
+<%end %>
+
+</ul>
+
+<%= link_to "Create a New Story in This World", "/worlds/#{@world.id}/stories/new", id: "new-world-link"  %>
+
+<ul>
+  <h4> Worldbuilding </h4>
+
+<% if @articles.any? %>
+  <% @articles.each do |article|%>
+  <li> <%= link_to "#{article.title}", article  %> </li>
+<% end %>
+<%end %>
+
+
+<%= link_to "Create an Article About This World", "/worlds/#{@world.id}/articles/new", id: "new-world-link"  %>
+
+
+
+
+
+
+
